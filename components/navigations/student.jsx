@@ -32,11 +32,15 @@ const NavigationStudent = () => {
         </h2>
       </div>
       <div className="flex flex-row lg:flex-col w-auto lg:w-full h-auto gap-4 lg:gap-0">
-        <div className="bg-[#F4F4F4] transition-all hover:bg-[#F4F4F4]/80 hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4">
+        <div
+          className={`${
+            isExpanded ? "h-[212px]" : "h-[52px]"
+          } transition-all hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4`}
+        >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">
             <div className="flex flex-row gap-2 items-center justify-start w-auto h-auto">
               <Image src={icon.user} width="16" height="16" />
-              <p className="hidden lg:flex text-[#292D32] font-medium text-sm text-start mt-0">
+              <p className="hidden lg:flex text-[#292D32] font-medium text-sm text-start truncate mt-0">
                 Pengaturan Akun
               </p>
             </div>

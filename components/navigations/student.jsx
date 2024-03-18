@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const icon = {
   user: require("@/shared/icons/user-black.svg"),
@@ -28,6 +29,8 @@ const NavigationStudent = () => {
       [fieldName]: !prevField[fieldName],
     }));
   };
+
+  const router = useRouter();
 
   return (
     <nav className="bg-[#FFFFFF] flex flex-row lg:flex-col gap-2 items-center lg:items-start justify-between w-full h-auto lg:h-full p-4 lg:p-8">
@@ -176,7 +179,10 @@ const NavigationStudent = () => {
             </React.Fragment>
           )}
         </div>
-        <button className="bg-[#292D32] transition-all hover:bg-[#292D32]/80 flex flex-row gap-4 items-center justify-center w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4">
+        <button
+          onClick={() => router.push("/")}
+          className="bg-[#292D32] transition-all hover:bg-[#292D32]/80 flex flex-row gap-4 items-center justify-center w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4"
+        >
           <p className="hidden lg:flex text-[#F4F4F4] font-medium text-sm mt-0">
             Keluar
           </p>

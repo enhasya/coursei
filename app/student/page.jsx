@@ -12,7 +12,9 @@ const StudentPage = () => {
         <NavigationStudent />
       </div>
       <div className="flex w-full lg:w-[75%] h-full items-start justify-start p-8">
-        <ComponentTable />
+        <div className="flex w-full p-0 mt-0">
+          <ComponentTable />
+        </div>
       </div>
     </div>
   );

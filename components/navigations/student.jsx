@@ -35,7 +35,7 @@ const NavigationStudent = () => {
         <div
           className={`${
             isExpanded ? "h-[212px]" : "h-[52px]"
-          } transition-all hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4`}
+          } transition-all duration-500 hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4`}
         >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">
             <div className="flex flex-row gap-2 items-center justify-start w-auto h-auto">

@@ -5,21 +5,30 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const icon = {
+  layoutGrid: require("@/shared/icons/layout-grid-black.svg"),
   user: require("@/shared/icons/user-black.svg"),
   signIn: require("@/shared/icons/sign-in-white.svg"),
+  arrowRight: require("@/shared/icons/arrow-right-black.svg"),
   chevronUp: require("@/shared/icons/chevron-up-black.svg"),
   edit: require("@/shared/icons/edit-black.svg"),
 };
 
-const NavigationStudent = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const NavigationTeacher = () => {
+  const [isExpanded, setIsExpanded] = useState({
+    navigation: false,
+    accountManagement: false,
+  });
+
   const [isEditField, setIsEditField] = useState({
     namaLengkap: false,
     bio: false,
   });
 
-  const isExpandedHandler = () => {
-    setIsExpanded(!isExpanded);
+  const isExpandedHandler = (sectionName) => {
+    setIsExpanded((prevField) => ({
+      ...prevField,
+      [sectionName]: !prevField[sectionName],
+    }));
   };
 
   const isEditFieldHandler = (fieldName) => {
@@ -50,7 +59,77 @@ const NavigationStudent = () => {
       <div className="flex flex-row lg:flex-col w-auto lg:w-full h-auto gap-4 lg:gap-0">
         <div
           className={`${
-            isExpanded ? "h-[212px]" : "h-[52px]"
+            isExpanded.navigation ? "h-[132px]" : "h-[52px]"
+          } transition-all duration-500 hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0`}
+        >
+          <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">
+            <div className="flex flex-row gap-2 items-center justify-start w-auto h-auto">
+              <Image src={icon.layoutGrid} width="16" height="16" />
+              <p className="hidden lg:flex text-[#292D32] font-medium text-sm text-start truncate mt-0">
+                Navigasi
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                isExpandedHandler("navigation");
+              }}
+            >
+              <Image
+                className={`transition-all ${
+                  isExpanded.navigation ? "rotate-180" : "rotate-0"
+                }`}
+                src={icon.chevronUp}
+                width="16"
+                height="16"
+              />
+            </button>
+          </div>
+          {isExpanded.navigation && (
+            <React.Fragment>
+              <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center mt-4">
+                <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
+                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                    Input Nilai
+                  </p>
+                  <button
+                    onClick={() => {
+                      isEditFieldHandler("namaLengkap");
+                    }}
+                  >
+                    <Image
+                      className="group opacity-0 transition-all group-hover:opacity-100"
+                      src={icon.arrowRight}
+                      width="14"
+                      height="14"
+                    />
+                  </button>
+                </div>
+              </div>
+              <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
+                <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
+                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                    Lihat Data Siswa
+                  </p>
+                  <button
+                    onClick={() => {
+                      isEditFieldHandler("nomorIndukGuru");
+                    }}
+                  >
+                    <Image
+                      className="group opacity-0 transition-all group-hover:opacity-100"
+                      src={icon.arrowRight}
+                      width="14"
+                      height="14"
+                    />
+                  </button>
+                </div>
+              </div>
+            </React.Fragment>
+          )}
+        </div>
+        <div
+          className={`${
+            isExpanded.accountManagement ? "h-[212px]" : "h-[52px]"
           } transition-all duration-500 hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0`}
         >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">
@@ -60,10 +139,10 @@ const NavigationStudent = () => {
                 Pengaturan Akun
               </p>
             </div>
-            <button onClick={isExpandedHandler}>
+            <button onClick={() => isExpandedHandler("accountManagement")}>
               <Image
                 className={`transition-all ${
-                  isExpanded ? "rotate-180" : "rotate-0"
+                  isExpanded.accountManagement ? "rotate-180" : "rotate-0"
                 }`}
                 src={icon.chevronUp}
                 width="16"
@@ -71,7 +150,7 @@ const NavigationStudent = () => {
               />
             </button>
           </div>
-          {isExpanded && (
+          {isExpanded.accountManagement && (
             <React.Fragment>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center mt-4">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
@@ -110,7 +189,7 @@ const NavigationStudent = () => {
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
                   <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
-                    Nomor Induk Siswa
+                    Nomor Induk Guru
                   </p>
                 </div>
                 <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
@@ -168,4 +247,4 @@ const NavigationStudent = () => {
   );
 };
 
-export default NavigationStudent;
+export default NavigationTeacher;

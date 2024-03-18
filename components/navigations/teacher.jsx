@@ -25,10 +25,9 @@ const NavigationTeacher = () => {
   });
 
   const isExpandedHandler = (sectionName) => {
-    setIsExpanded(!isExpanded);
-    setIsExpanded((prevField) => ({
-      ...prevField,
-      [sectionName]: !prevField[sectionName],
+    setIsExpanded((prevExpanded) => ({
+      ...prevExpanded,
+      [sectionName]: !prevExpanded[sectionName],
     }));
   };
 

@@ -4,8 +4,8 @@ const { default: LayoutAuth } = require("@/components/layouts/auth");
 
 export default function Home() {
   return (
-    <main>
+    <React.Fragment>
       <LayoutAuth />
-    </main>
+    </React.Fragment>
   );
 }

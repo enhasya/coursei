@@ -12,9 +12,21 @@ const icon = {
 
 const NavigationStudent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isEditField, setIsEditField] = useState({
+    namaLengkap: false,
+    nomorIndukSiswa: false,
+    bio: false,
+  });
 
   const isExpandedHandler = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const isEditFieldHandler = (fieldName) => {
+    setIsEditField((prevField) => ({
+      ...prevField,
+      [fieldName]: !prevField[fieldName],
+    }));
   };
 
   return (
@@ -26,7 +38,9 @@ const NavigationStudent = () => {
         </p>
       </button>
       <div className="flex flex-col w-auto lg:w-full h-auto items-center lg:items-start gap-2">
-        <h1 className="text-[#292D32] font-semibold text-sm lg:text-lg mt-0">COURSEI</h1>
+        <h1 className="text-[#292D32] font-semibold text-sm lg:text-lg mt-0">
+          COURSEI
+        </h1>
         <h2 className="hidden lg:flex text-[#292D32]/80 font-medium text-sm mt-0">
           Sistem Akademik Kristen Lemuel
         </h2>
@@ -62,48 +76,102 @@ const NavigationStudent = () => {
                   <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Nama Lengkap
                   </p>
-                  <Image
-                    className="group opacity-0 transition-all group-hover:opacity-100"
-                    src={icon.edit}
-                    width="14"
-                    height="14"
-                  />
+                  <button
+                    onClick={() => {
+                      isEditFieldHandler("namaLengkap");
+                    }}
+                  >
+                    <Image
+                      className="group opacity-0 transition-all group-hover:opacity-100"
+                      src={icon.edit}
+                      width="14"
+                      height="14"
+                    />
+                  </button>
                 </div>
-                <p className="hidden lg:flex text-[#292D32] font-medium text-xs text-start mt-0">
-                  John Doe
-                </p>
+                {isEditField.namaLengkap ? (
+                  <React.Fragment>
+                    <input
+                      className="bg-transparent outline-none w-full text-[#292D32]/80 font-medium text-xs"
+                      type="text"
+                      placeholder="Masukkan Nama Lengkap .."
+                    />
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
+                      John Doe
+                    </p>
+                  </React.Fragment>
+                )}
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
                   <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Nomor Induk Siswa
                   </p>
-                  <Image
-                    className="group opacity-0 transition-all group-hover:opacity-100"
-                    src={icon.edit}
-                    width="14"
-                    height="14"
-                  />
+                  <button
+                    onClick={() => {
+                      isEditFieldHandler("nomorIndukSiswa");
+                    }}
+                  >
+                    <Image
+                      className="group opacity-0 transition-all group-hover:opacity-100"
+                      src={icon.edit}
+                      width="14"
+                      height="14"
+                    />
+                  </button>
                 </div>
-                <p className="hidden lg:flex text-[#292D32] font-medium text-xs text-start mt-0">
-                  C.73.2918.2
-                </p>
+                {isEditField.nomorIndukSiswa ? (
+                  <React.Fragment>
+                    <input
+                      className="bg-transparent outline-none w-full text-[#292D32]/80 font-medium text-xs"
+                      type="text"
+                      placeholder="Masukkan Nomor Induk Siswa .."
+                    />
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
+                      C.73.2918.2
+                    </p>
+                  </React.Fragment>
+                )}
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
                   <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Bio
                   </p>
-                  <Image
-                    className="group opacity-0 transition-all group-hover:opacity-100"
-                    src={icon.edit}
-                    width="14"
-                    height="14"
-                  />
+                  <button
+                    onClick={() => {
+                      isEditFieldHandler("bio");
+                    }}
+                  >
+                    <Image
+                      className="group opacity-0 transition-all group-hover:opacity-100"
+                      src={icon.edit}
+                      width="14"
+                      height="14"
+                    />
+                  </button>
                 </div>
-                <p className="hidden lg:flex text-[#292D32] font-medium text-xs text-start mt-0">
-                  Available
-                </p>
+                {isEditField.bio ? (
+                  <React.Fragment>
+                    <input
+                      className="bg-transparent outline-none w-full text-[#292D32]/80 font-medium text-xs"
+                      type="text"
+                      placeholder="Masukkan Bio .."
+                    />
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
+                      Available
+                    </p>
+                  </React.Fragment>
+                )}
               </div>
             </React.Fragment>
           )}

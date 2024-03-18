@@ -79,9 +79,9 @@ const LayoutAuth = () => {
         )}
         {isActive === activeSession.recovery && (
           <React.Fragment>
-            <h2 className="text-[#292D32]/80 font-medium text-sm mt-8 lg:mt-0">
+            <p className="text-[#292D32]/80 font-medium text-sm mt-8 lg:mt-0">
               Hubungi administrator untuk mengurus akun anda
-            </h2>
+            </p>
             <button
               onClick={() => {
                 setIsActive(activeSession.auth);

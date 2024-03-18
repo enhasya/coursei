@@ -33,7 +33,7 @@ const LayoutAuth = () => {
       <div className="bg-white flex flex-col w-full lg:w-[440px] h-auto lg:h-[560px] items-center justify-between rounded-lg lg:rounded-l-none lg:rounded-r-lg p-8">
         <div className="flex flex-col w-full h-auto gap-2">
           <h1 className="text-[#292D32] font-semibold text-lg mt-0">
-            Sistem Akademik Kristen Lemuel
+            Selamat datang di TestApp
           </h1>
           <h2 className="text-[#292D32]/80 font-medium text-sm mt-0">
             Otentikasi diperlukan untuk mengakses dashboard

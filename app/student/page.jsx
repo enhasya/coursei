@@ -11,7 +11,7 @@ const StudentPage = () => {
       <div className="flex w-full lg:w-[25%] h-full">
         <NavigationStudent />
       </div>
-      <div className="flex w-full lg:w-[75%] h-full items-start justify-start">
+      <div className="flex w-full lg:w-[75%] h-full items-start justify-start p-8">
         <ComponentTable />
       </div>
     </div>

@@ -41,7 +41,7 @@ const NavigationStudent = () => {
       </button>
       <div className="flex flex-col w-auto lg:w-full h-auto items-center lg:items-start gap-2">
         <h1 className="text-[#292D32] font-semibold text-sm lg:text-lg mt-0">
-          COURSEI
+          COURSEI STUDENT
         </h1>
         <h2 className="hidden lg:flex text-[#292D32]/80 font-medium text-sm mt-0">
           Sistem Akademik Kristen Lemuel

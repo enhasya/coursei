@@ -4,8 +4,8 @@ import React from "react";
 import LayoutGrid from "@/components/layouts/grid";
 
 const {
-  default: NavigationTeacher,
-} = require("@/components/navigations/teacher");
+  default: NavigationAdministrator,
+} = require("@/components/navigations/administrator");
 
 const icon = {
   filePencil: require("@/shared/icons/file-pencil-black.svg"),
@@ -13,20 +13,18 @@ const icon = {
   fileReport: require("@/shared/icons/file-report-black.svg"),
 };
 
-const TeacherPage = () => {
+const AdministratorPage = () => {
   return (
     <div className="flex flex-col lg:flex-row w-full h-auto lg:h-screen items-start justify-start gap-0 p-0 mt-0">
       <div className="flex w-full lg:w-[25%] h-full">
-        <NavigationTeacher />
+        <NavigationAdministrator />
       </div>
       <div className="flex w-full lg:w-[75%] h-full items-start justify-start p-4 lg:p-8">
         <div className="grid grid-cols-2 lg:grid-cols-3 w-full gap-4 lg:gap-8 p-0 mt-0">
           <LayoutGrid
             titleIcon={icon.filePencil}
-            title={"Input Nilai"}
-            description={
-              "Tautan langsung ke halaman input nilai siswa untuk memudahkan pengisian nilai"
-            }
+            title={"Manajemen Data"}
+            description={"Lihat, tambah, edit, hapus data dengan mudah"}
           />
           <LayoutGrid
             titleIcon={icon.school}
@@ -48,4 +46,4 @@ const TeacherPage = () => {
   );
 };
 
-export default TeacherPage;
+export default AdministratorPage;

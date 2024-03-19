@@ -5,7 +5,7 @@ import React from "react";
 const {
   default: NavigationStudent,
 } = require("@/components/navigations/student");
-const { default: ProviderTime } = require("@/provider/time");
+const { default: ProviderTime } = require("@/provider/time-provider");
 const { default: ComponentTable } = require("@/app/student/components/table");
 
 const StudentPage = () => {

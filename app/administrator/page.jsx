@@ -6,7 +6,7 @@ const {
   default: NavigationAdministrator,
 } = require("@/components/navigations/administrator");
 const { default: LayoutGrid } = require("@/components/layouts/grid");
-const { default: ProviderTime } = require("@/provider/time");
+const { default: ProviderTime } = require("@/provider/time-provider");
 
 const icon = {
   filePencil: require("@/shared/icons/file-pencil-black.svg"),

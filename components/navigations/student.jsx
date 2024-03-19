@@ -33,7 +33,7 @@ const NavigationStudent = () => {
 
   return (
     <nav className="bg-[#FFFFFF] flex flex-col gap-4 items-center lg:items-start justify-between w-full h-auto lg:h-full p-8">
-      <div className="flex flex-col w-auto lg:w-full h-auto items-center lg:items-start gap-2">
+      <div className="flex flex-col w-full h-auto items-start gap-2">
         <h1 className="text-[#292D32] font-semibold text-sm lg:text-lg mt-0">
           COURSEI STUDENT
         </h1>

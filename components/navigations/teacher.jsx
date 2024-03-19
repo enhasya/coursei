@@ -42,7 +42,7 @@ const NavigationTeacher = () => {
 
   return (
     <nav className="bg-[#FFFFFF] flex flex-col gap-4 items-center lg:items-start justify-between w-full h-auto lg:h-full p-8">
-      <div className="flex flex-col w-auto lg:w-full h-auto items-center lg:items-start gap-2">
+      <div className="flex flex-col w-full h-auto items-start gap-2">
         <h1 className="text-[#292D32] font-semibold text-sm lg:text-lg mt-0">
           COURSEI TEACHER
         </h1>
@@ -125,7 +125,9 @@ const NavigationTeacher = () => {
         </div>
         <div
           className={`${
-            isExpanded.accountManagement ? "h-[212px]" : "h-[52px]"
+            isExpanded.accountManagement
+              ? "h-auto lg:h-[212px]"
+              : "h-auto lg:h-[52px]"
           } transition-all duration-500 flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg px-0 py-4 lg:p-4 mt-0`}
         >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">

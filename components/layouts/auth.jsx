@@ -86,7 +86,7 @@ const LayoutAuth = () => {
               onClick={() => {
                 setIsActive(activeSession.auth);
               }}
-              className="bg-[#292D32] transition-all hover:bg-[#292D32]/80 flex flex-row gap-4 items-center justify-center w-full h-auto rounded-lg p-4 mt-4"
+              className="bg-[#292D32] transition-all hover:bg-[#292D32]/80 flex flex-row gap-4 items-center justify-center w-full h-auto rounded-lg p-4 mt-8 lg:mt-0"
             >
               <Image src={icon.arrowLeft} width="16" height="16" />
               <p className="text-[#F4F4F4] font-medium text-sm mt-0">Kembali</p>

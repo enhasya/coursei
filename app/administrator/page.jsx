@@ -10,6 +10,8 @@ const {
 const icon = {
   filePencil: require("@/shared/icons/file-pencil-black.svg"),
   school: require("@/shared/icons/school-black.svg"),
+  book: require("@/shared/icons/book-black.svg"),
+  printer: require("@/shared/icons/printer-black.svg"),
   fileReport: require("@/shared/icons/file-report-black.svg"),
 };
 
@@ -24,20 +26,29 @@ const AdministratorPage = () => {
           <LayoutGrid
             titleIcon={icon.filePencil}
             title={"Manajemen Data"}
-            description={"Lihat, tambah, edit, hapus data dengan mudah"}
-          />
-          <LayoutGrid
-            titleIcon={icon.school}
-            title={"Lihat Data Siswa"}
             description={
-              "Akses cepat ke profil individu siswa untuk melihat detail pribadi, catatan akademik, dan informasi kontak"
+              "Akses langsung ke data untuk mengelola semua aspek data sekolah termasuk lihat, tambah, ubah, hapus data"
             }
           />
           <LayoutGrid
-            titleIcon={icon.fileReport}
-            title={"Riwayat Nilai"}
+            titleIcon={icon.school}
+            title={"Tambah Tahun Ajaran"}
             description={
-              "Tautan langsung ke riwayat nilai siswa untuk melihat sejarah nilai mereka dalam berbagai mata pelajaran"
+              "Tautan cepat untuk menambahkan tahun ajaran baru ke dalam sistem"
+            }
+          />
+          <LayoutGrid
+            titleIcon={icon.book}
+            title={"Input Rombongan Belajar"}
+            description={
+              "Langsung ke halaman untuk memasukkan informasi tentang rombongan belajar seperti kelas, guru, dan siswa yang terdaftar"
+            }
+          />
+          <LayoutGrid
+            titleIcon={icon.printer}
+            title={"Cetak Laporan"}
+            description={
+              "Akses mudah untuk mencetak laporan yang diperlukan, seperti laporan keuangan, laporan nilai, atau laporan kehadiran"
             }
           />
         </div>

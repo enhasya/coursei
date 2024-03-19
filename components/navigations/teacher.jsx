@@ -41,13 +41,7 @@ const NavigationTeacher = () => {
   const router = useRouter();
 
   return (
-    <nav className="bg-[#FFFFFF] flex flex-row lg:flex-col gap-2 items-center lg:items-start justify-between w-full h-auto lg:h-full p-4 lg:p-8">
-      <button className="bg-[#F4F4F4] transition-all hover:bg-[#F4F4F4]/80 flex lg:hidden flex-row gap-4 items-center justify-start w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4">
-        <Image src={icon.user} width="16" height="16" />
-        <p className="hidden lg:flex text-[#292D32] font-medium text-sm mt-0">
-          Masuk sebagai C.73.2918.2
-        </p>
-      </button>
+    <nav className="bg-[#FFFFFF] flex flex-col gap-4 items-center lg:items-start justify-between w-full h-auto lg:h-full p-8">
       <div className="flex flex-col w-auto lg:w-full h-auto items-center lg:items-start gap-2">
         <h1 className="text-[#292D32] font-semibold text-sm lg:text-lg mt-0">
           COURSEI TEACHER
@@ -56,16 +50,16 @@ const NavigationTeacher = () => {
           Sistem Akademik Kristen Lemuel
         </h2>
       </div>
-      <div className="flex flex-row lg:flex-col w-auto lg:w-full h-auto gap-4 lg:gap-0">
+      <div className="flex flex-col w-full h-auto gap-0">
         <div
           className={`${
-            isExpanded.navigation ? "h-[132px]" : "h-[52px]"
-          } transition-all duration-500 hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0`}
+            isExpanded.navigation ? "h-auto lg:h-[132px]" : "h-auto lg:h-[52px]"
+          } transition-all duration-500 flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg px-0 py-4 lg:p-4 mt-0`}
         >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">
             <div className="flex flex-row gap-2 items-center justify-start w-auto h-auto">
               <Image src={icon.layoutGrid} width="16" height="16" />
-              <p className="hidden lg:flex text-[#292D32] font-medium text-sm text-start truncate mt-0">
+              <p className="flex text-[#292D32] font-medium text-sm text-start truncate mt-0">
                 Navigasi
               </p>
             </div>
@@ -76,7 +70,9 @@ const NavigationTeacher = () => {
             >
               <Image
                 className={`transition-all ${
-                  isExpanded.navigation ? "rotate-180" : "rotate-0"
+                  isExpanded.navigation
+                    ? "rotate-0 lg:rotate-180"
+                    : "rotate-180 lg:rotate-0"
                 }`}
                 src={icon.chevronUp}
                 width="16"
@@ -88,7 +84,7 @@ const NavigationTeacher = () => {
             <React.Fragment>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center mt-4">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Input Nilai
                   </p>
                   <button
@@ -107,7 +103,7 @@ const NavigationTeacher = () => {
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Lihat Data Siswa
                   </p>
                   <button
@@ -130,19 +126,21 @@ const NavigationTeacher = () => {
         <div
           className={`${
             isExpanded.accountManagement ? "h-[212px]" : "h-[52px]"
-          } transition-all duration-500 hidden lg:flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg p-4 mt-0`}
+          } transition-all duration-500 flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg px-0 py-4 lg:p-4 mt-0`}
         >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">
             <div className="flex flex-row gap-2 items-center justify-start w-auto h-auto">
               <Image src={icon.user} width="16" height="16" />
-              <p className="hidden lg:flex text-[#292D32] font-medium text-sm text-start truncate mt-0">
+              <p className="flex text-[#292D32] font-medium text-sm text-start truncate mt-0">
                 Pengaturan Akun
               </p>
             </div>
             <button onClick={() => isExpandedHandler("accountManagement")}>
               <Image
                 className={`transition-all ${
-                  isExpanded.accountManagement ? "rotate-180" : "rotate-0"
+                  isExpanded.accountManagement
+                    ? "rotate-0 lg:rotate-180"
+                    : "rotate-180 lg:rotate-0"
                 }`}
                 src={icon.chevronUp}
                 width="16"
@@ -154,7 +152,7 @@ const NavigationTeacher = () => {
             <React.Fragment>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center mt-4">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Nama Lengkap
                   </p>
                   <button
@@ -180,7 +178,7 @@ const NavigationTeacher = () => {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
+                    <p className="flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
                       John Doe
                     </p>
                   </React.Fragment>
@@ -188,17 +186,17 @@ const NavigationTeacher = () => {
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Nomor Induk Guru
                   </p>
                 </div>
-                <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
+                <p className="flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
                   C.73.2918.2
                 </p>
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="hidden lg:flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
                     Bio
                   </p>
                   <button
@@ -224,7 +222,7 @@ const NavigationTeacher = () => {
                   </React.Fragment>
                 ) : (
                   <React.Fragment>
-                    <p className="hidden lg:flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
+                    <p className="flex text-[#292D32]/80 font-medium text-xs text-start mt-0">
                       Available
                     </p>
                   </React.Fragment>
@@ -235,11 +233,9 @@ const NavigationTeacher = () => {
         </div>
         <button
           onClick={() => router.push("/")}
-          className="bg-[#292D32] transition-all hover:bg-[#292D32]/80 flex flex-row gap-4 items-center justify-center w-auto lg:w-full h-auto rounded-lg p-4 mt-0 lg:mt-4"
+          className="bg-[#292D32] transition-all hover:bg-[#292D32]/80 flex flex-row gap-4 items-center justify-center w-auto lg:w-full h-auto rounded-lg p-4 mt-4"
         >
-          <p className="hidden lg:flex text-[#F4F4F4] font-medium text-sm mt-0">
-            Keluar
-          </p>
+          <p className="flex text-[#F4F4F4] font-medium text-sm mt-0">Keluar</p>
           <Image src={icon.signIn} width="16" height="16" />
         </button>
       </div>

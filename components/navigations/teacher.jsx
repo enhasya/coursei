@@ -13,7 +13,7 @@ const icon = {
   edit: require("@/shared/icons/edit-black.svg"),
 };
 
-const NavigationTeacher = () => {
+const NavigationTeacher = ({ link }) => {
   const [isExpanded, setIsExpanded] = useState({
     navigation: false,
     accountManagement: false,
@@ -84,14 +84,13 @@ const NavigationTeacher = () => {
             <React.Fragment>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center mt-4">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
-                    Input Nilai
-                  </p>
                   <button
-                    onClick={() => {
-                      isEditFieldHandler("namaLengkap");
-                    }}
+                    onClick={() => router.push("/")}
+                    className="flex text-[#292D32] font-semibold text-xs text-start hover:underline mt-0"
                   >
+                    Input Nilai
+                  </button>
+                  <button onClick={() => router.push("/")}>
                     <Image
                       className="group opacity-0 transition-all group-hover:opacity-100"
                       src={icon.arrowRight}
@@ -103,14 +102,13 @@ const NavigationTeacher = () => {
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
-                    Lihat Data Siswa
-                  </p>
                   <button
-                    onClick={() => {
-                      isEditFieldHandler("nomorIndukGuru");
-                    }}
+                    onClick={() => router.push("/")}
+                    className="flex text-[#292D32] font-semibold text-xs text-start hover:underline mt-0"
                   >
+                    Lihat Data Siswa
+                  </button>
+                  <button onClick={() => router.push("/")}>
                     <Image
                       className="group opacity-0 transition-all group-hover:opacity-100"
                       src={icon.arrowRight}

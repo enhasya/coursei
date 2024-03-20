@@ -84,14 +84,13 @@ const NavigationAdministrator = () => {
             <React.Fragment>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center mt-4">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <button
+                    onClick={() => router.push("/")}
+                    className="flex text-[#292D32] font-semibold text-xs text-start hover:underline mt-0"
+                  >
                     Manajemen Data
-                  </p>
-                  <button
-                    onClick={() => {
-                      isEditFieldHandler("namaLengkap");
-                    }}
-                  >
+                  </button>
+                  <button onClick={() => router.push("/")}>
                     <Image
                       className="group opacity-0 transition-all group-hover:opacity-100"
                       src={icon.arrowRight}
@@ -103,14 +102,13 @@ const NavigationAdministrator = () => {
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <button
+                    onClick={() => router.push("/")}
+                    className="flex text-[#292D32] font-semibold text-xs text-start hover:underline mt-0"
+                  >
                     Tambah Tahun Ajaran
-                  </p>
-                  <button
-                    onClick={() => {
-                      isEditFieldHandler("nomorIndukGuru");
-                    }}
-                  >
+                  </button>
+                  <button onClick={() => router.push("/")}>
                     <Image
                       className="group opacity-0 transition-all group-hover:opacity-100"
                       src={icon.arrowRight}
@@ -122,14 +120,13 @@ const NavigationAdministrator = () => {
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
+                  <button
+                    onClick={() => router.push("/")}
+                    className="flex text-[#292D32] font-semibold text-xs text-start hover:underline mt-0"
+                  >
                     Input Rombongan Belajar
-                  </p>
-                  <button
-                    onClick={() => {
-                      isEditFieldHandler("nomorIndukGuru");
-                    }}
-                  >
+                  </button>
+                  <button onClick={() => router.push("/")}>
                     <Image
                       className="group opacity-0 transition-all group-hover:opacity-100"
                       src={icon.arrowRight}
@@ -141,14 +138,13 @@ const NavigationAdministrator = () => {
               </div>
               <div className="group flex flex-col w-full h-auto gap-0 items-start justify-center">
                 <div className="flex flex-row gap-2 items-center justify-between w-full h-auto mt-0">
-                  <p className="flex text-[#292D32] font-semibold text-xs text-start mt-0">
-                    Cetak Laporan
-                  </p>
                   <button
-                    onClick={() => {
-                      isEditFieldHandler("nomorIndukGuru");
-                    }}
+                    onClick={() => router.push("/")}
+                    className="flex text-[#292D32] font-semibold text-xs text-start hover:underline mt-0"
                   >
+                    Cetak Laporan
+                  </button>
+                  <button onClick={() => router.push("/")}>
                     <Image
                       className="group opacity-0 transition-all group-hover:opacity-100"
                       src={icon.arrowRight}
@@ -163,7 +159,9 @@ const NavigationAdministrator = () => {
         </div>
         <div
           className={`${
-            isExpanded.accountManagement ? "h-auto lg:h-[212px]" : "h-auto lg:h-[52px]"
+            isExpanded.accountManagement
+              ? "h-auto lg:h-[212px]"
+              : "h-auto lg:h-[52px]"
           } transition-all duration-500 flex flex-col gap-4 items-start justify-between w-auto lg:w-full h-auto rounded-lg px-0 py-4 lg:p-4 mt-0`}
         >
           <div className="flex flex-row gap-2 items-center justify-between w-full h-auto">

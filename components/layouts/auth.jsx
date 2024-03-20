@@ -9,7 +9,7 @@ const activeSession = {
 };
 
 const image = {
-  cover: require("@/shared/assets/brandon-vazquez-koC5eG6v6ew-unsplash.jpg"),
+  cover: require("@/shared/assets/alex-lvrs-ZRTd9_Fk6rc-unsplash.jpg"),
 };
 
 const icon = {

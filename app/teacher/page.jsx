@@ -5,7 +5,13 @@ import React from "react";
 const {
   default: NavigationTeacher,
 } = require("@/components/navigations/teacher");
-const { default: LayoutGrid } = require("@/components/layouts/grid");
+const {
+  default: LayoutGridButton,
+} = require("@/components/layouts/grid-button");
+const {
+  default: ComponentInputScore,
+} = require("@/app/teacher/components/input-score");
+const { default: LayoutGridLink } = require("@/components/layouts/grid-link");
 const { default: ProviderTime } = require("@/provider/time-provider");
 
 const icon = {
@@ -30,21 +36,23 @@ const TeacherPage = () => {
           </label>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8 p-0 mt-8">
-          <LayoutGrid
+          <LayoutGridButton
             titleIcon={icon.filePencil}
             title={"Input Nilai"}
             description={
               "Tautan langsung ke halaman input nilai siswa untuk memudahkan pengisian nilai"
             }
-          />
-          <LayoutGrid
+          >
+            Hiasdisado
+          </LayoutGridButton>
+          <LayoutGridLink
             titleIcon={icon.school}
             title={"Lihat Data Siswa"}
             description={
               "Akses cepat ke profil individu siswa untuk melihat detail pribadi, catatan akademik, dan informasi kontak"
             }
           />
-          <LayoutGrid
+          <LayoutGridLink
             titleIcon={icon.fileReport}
             title={"Riwayat Nilai"}
             description={
@@ -52,6 +60,7 @@ const TeacherPage = () => {
             }
           />
         </div>
+        <ComponentInputScore />
       </div>
     </div>
   );

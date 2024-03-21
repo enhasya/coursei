@@ -5,7 +5,7 @@ import React from "react";
 const {
   default: NavigationAdministrator,
 } = require("@/components/navigations/administrator");
-const { default: LayoutGrid } = require("@/components/layouts/grid");
+const { default: LayoutGridLink } = require("@/components/layouts/grid-link");
 const { default: ProviderTime } = require("@/provider/time-provider");
 
 const icon = {
@@ -32,28 +32,28 @@ const AdministratorPage = () => {
           </label>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8 p-0 mt-8">
-          <LayoutGrid
+          <LayoutGridLink
             titleIcon={icon.filePencil}
             title={"Manajemen Data"}
             description={
               "Akses langsung ke data untuk mengelola semua aspek data sekolah termasuk lihat, tambah, ubah, hapus data"
             }
           />
-          <LayoutGrid
+          <LayoutGridLink
             titleIcon={icon.school}
             title={"Tambah Tahun Ajaran"}
             description={
               "Tautan cepat untuk menambahkan tahun ajaran baru ke dalam sistem"
             }
           />
-          <LayoutGrid
+          <LayoutGridLink
             titleIcon={icon.book}
             title={"Input Rombongan Belajar"}
             description={
               "Langsung ke halaman untuk memasukkan informasi tentang rombongan belajar seperti kelas, guru, dan siswa yang terdaftar"
             }
           />
-          <LayoutGrid
+          <LayoutGridLink
             titleIcon={icon.printer}
             title={"Cetak Laporan"}
             description={

@@ -8,7 +8,7 @@ const icon = {
   arrowRight: require("@/shared/icons/arrow-right-black.svg"),
 };
 
-const LayoutGrid = ({ titleIcon, link, title, description }) => {
+const LayoutGridButton = ({ titleIcon, link, title, description }) => {
   const router = useRouter();
 
   return (
@@ -34,4 +34,4 @@ const LayoutGrid = ({ titleIcon, link, title, description }) => {
   );
 };
 
-export default LayoutGrid;
+export default LayoutGridButton;

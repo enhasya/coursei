@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 const {
   default: NavigationTeacher,
@@ -21,6 +21,12 @@ const icon = {
 };
 
 const TeacherPage = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const isExpandedHandler = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <div className="flex flex-col lg:flex-row w-full h-auto lg:h-screen items-start justify-start gap-0 p-0 mt-0">
       <div className="flex w-full lg:w-[25%] h-full">
@@ -38,6 +44,8 @@ const TeacherPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8 p-0 mt-8">
           <LayoutGridButton
             titleIcon={icon.filePencil}
+            onClick={isExpanded}
+            onClickHandler={isExpandedHandler}
             title={"Input Nilai"}
             description={
               "Tautan langsung ke halaman input nilai siswa untuk memudahkan pengisian nilai"
@@ -60,7 +68,7 @@ const TeacherPage = () => {
             }
           />
         </div>
-        <ComponentInputScore />
+        {isExpanded && <ComponentInputScore />}
       </div>
     </div>
   );

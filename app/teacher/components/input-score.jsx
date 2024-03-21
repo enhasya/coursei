@@ -21,14 +21,16 @@ const ComponentInputScore = () => {
             onClick={() => router.push("/")}
             className="text-[#292D32] font-semibold text-sm truncate hover:underline mt-0"
           >
-            Input Score
+            Input Nilai
           </button>
         </div>
         <button>
           <Image src={icon.arrowRight} width="16" height="16" />
         </button>
       </div>
-      <p className="text-[#292D32]/80 font-medium text-xs mt-4 lg:mt-0">Apaya</p>
+      <p className="text-[#292D32]/80 font-medium text-xs mt-4 lg:mt-0">
+        Tunggu
+      </p>
     </div>
   );
 };

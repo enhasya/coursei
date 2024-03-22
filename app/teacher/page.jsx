@@ -50,9 +50,7 @@ const TeacherPage = () => {
             description={
               "Tautan langsung ke halaman input nilai siswa untuk memudahkan pengisian nilai"
             }
-          >
-            Hiasdisado
-          </LayoutGridButton>
+          />
           <LayoutGridLink
             titleIcon={icon.school}
             title={"Lihat Data Siswa"}

@@ -15,7 +15,7 @@ const { default: LayoutGridLink } = require("@/components/layouts/grid-link");
 const { default: ProviderTime } = require("@/provider/time-provider");
 
 const icon = {
-  filePencil: require("@/shared/icons/file-pencil-black.svg"),
+  clipboardPlus: require("@/shared/icons/clipboard-plus-black.svg"),
   school: require("@/shared/icons/school-black.svg"),
   fileReport: require("@/shared/icons/file-report-black.svg"),
 };
@@ -43,7 +43,7 @@ const TeacherPage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8 p-0 mt-8">
           <LayoutGridButton
-            titleIcon={icon.filePencil}
+            titleIcon={icon.clipboardPlus}
             onClick={isExpanded}
             onClickHandler={isExpandedHandler}
             title={"Input Nilai"}
@@ -68,7 +68,7 @@ const TeacherPage = () => {
             }
           />
         </div>
-        {isExpanded && <ComponentInputScore />}
+        {isExpanded && <ComponentInputScore onClick={isExpandedHandler} />}
       </div>
     </div>
   );
